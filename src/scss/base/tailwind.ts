@@ -1,0 +1,1 @@
+export const NAV_BAR_LINK = "text-white hover:opacity-60 transition-opacity"
