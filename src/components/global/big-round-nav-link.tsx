@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom"
 type Props = {
 	link: string,
 	title: string,
-	isWithIcon? : boolean,
-	className? : string
+	isWithIcon?: boolean,
+	className?: string
 }
 export function BigRoundNavLink({ link, title, className, isWithIcon = false }: Props) {
 	return (

@@ -5,11 +5,11 @@ import { NAV_BAR_LINK } from "../../scss/base/tailwind";
 
 export function NavBar() {
 	return (
-		<header className="sticky flex items-center justify-between px-16 pt-3 pb-4">
+		<header className="sticky flex items-center justify-between px-16 py-5">
 			<div className="gap-16 flex items-center">
 				<Logo />
-				<div className="bg-white opacity-60 mt-1 w-0.5 h-8" />
-				<div className="gap-6 mt-1 flex items-center">
+				<div className="bg-white opacity-60 w-0.5 h-8" />
+				<div className="gap-6 flex items-center">
 					<NavLink to='/' className={NAV_BAR_LINK}>Home</NavLink>
 					<NavLink to='/' className={NAV_BAR_LINK}>Shop</NavLink>
 					<NavLink to='/' className={NAV_BAR_LINK}>Why us</NavLink>
@@ -19,8 +19,7 @@ export function NavBar() {
 					</div>
 				</div>
 			</div>
-			<div></div>
-			<NavLink to='/' className={`${NAV_BAR_LINK} block mt-1`}>Sign in</NavLink>
+			<NavLink to='/' className={`${NAV_BAR_LINK} block`}>Sign in</NavLink>
 		</header>
 	)
 }

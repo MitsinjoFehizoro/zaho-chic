@@ -1,4 +1,5 @@
 import image from "../../assets/images/background.webp";
+import { TITLE } from "../../scss/base/tailwind";
 import { BigRoundNavLink } from "../global/big-round-nav-link";
 
 export function Welcome() {
@@ -6,8 +7,8 @@ export function Welcome() {
 		<section className="relative h-[80vh] overflow-hidden">
 			<div className="w-full h-[80vh] absolute bg-secondary opacity-70" />
 			<div className="flex flex-col items-center justify-end pb-16 w-full h-[80vh] absolute bg-gradient-to-t from-secondary via-secondary/60 to-transparent">
-				<h1 className="text-center text-white text-4xl font-extrabold mb-3">Welcome to our online shop, Zaho Chic</h1>
-				<h1 className="text-center text-white text-4xl font-extrabold"> Where Style Meets Elegance</h1>
+				<h1 className={`${TITLE} mb-3`}>Welcome to our online shop, Zaho Chic</h1>
+				<h1 className={`${TITLE}`}> Where Style Meets Elegance</h1>
 				<p className="w-1/2 text-center text-white my-8 opacity-60">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reicien
 					dis, voluptatem consectetur, incidunt accusamus blanditiis
