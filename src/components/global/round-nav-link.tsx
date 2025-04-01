@@ -6,7 +6,7 @@ type Props = {
 }
 export function RoundNavLink({ link, title }: Props) {
 	return (
-		<NavLink to={link} className="text-white py-1 px-4 bg-primary rounded-full">
+		<NavLink to={link} className="text-white font-semibold py-1 px-4 bg-primary rounded-full">
 			{title}
 		</NavLink>
 	)

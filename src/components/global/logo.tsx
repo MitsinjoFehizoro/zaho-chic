@@ -6,3 +6,12 @@ export function Logo() {
 		</div>
 	)
 }
+
+export function BigLogo() {
+	return (
+		<div className="relative inline-block pl-14">
+			<p className="absolute top-0 left-0 text-primary text-5xl"><i className="fa-solid fa-quote-left"></i></p>
+			<p className="text-white font-thin text-6xl"><span className="text-8xl">z</span>aho chic</p>
+		</div>
+	)
+}

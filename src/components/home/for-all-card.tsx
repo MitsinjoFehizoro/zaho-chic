@@ -4,7 +4,7 @@ type Props = {
 	image: string,
 	title : string
 }
-export function ShopCard({ image, title }: Props) {
+export function ForAllCard({ image, title }: Props) {
 
 	return (
 		<div className="w-96 flex flex-col items-center relative">

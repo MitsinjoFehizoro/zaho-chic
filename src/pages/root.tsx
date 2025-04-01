@@ -4,7 +4,7 @@ import { Footer } from "../components/global/footer";
 
 export default function Root() {
 	return <>
-		<NavBar/>
+		<NavBar />
 		<Outlet />
 		<Footer />
 	</>

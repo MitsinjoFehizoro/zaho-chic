@@ -8,7 +8,7 @@ type Props = {
 }
 export function BigRoundNavLink({ link, title, className, isWithIcon = false }: Props) {
 	return (
-		<NavLink to={link} className={`${className} flex gap-2 items-center justify-center w-36 py-2 rounded-full text-white text-center  text-lg font-bold`}>
+		<NavLink to={link} className={`${className} flex gap-2 items-center justify-center w-36 py-2 rounded-full text-white text-center  text-lg font-bold transition hover:scale-105`}>
 			<p>{title}</p>
 			{
 				isWithIcon && (
