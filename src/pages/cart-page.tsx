@@ -30,7 +30,7 @@ export function CartPage() {
 					<>
 						<CartCard cart={stateFetch.data.data} onUpdate={handleUpdate} />
 						<OrderSummary cart={stateFetch.data.data} />
-					</>
+					</>	
 				)
 			}
 

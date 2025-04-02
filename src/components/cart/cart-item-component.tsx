@@ -2,13 +2,19 @@ import { UpdateSize } from './update-size';
 import { UpdateQuantity } from './update-quantity';
 import { Price } from '../global/price';
 import { CartItem } from '../../types/CartItem';
+import useFetch from '../../hooks/useFetch';
+import { deleteCartItemService } from '../../services/cart-item-service';
 
 type Props = {
 	cartItem: CartItem
 	onUpdate: () => void
 }
 export function CartItemComponent({ cartItem, onUpdate }: Props) {
-
+	const { stateFetch, fetchData } = useFetch(() => deleteCartItemService(cartItem.id.toString()))
+	const hanldeClick = async () => {
+		await fetchData()
+		onUpdate()
+	}
 	return (
 		<div className='mb-12'>
 			<div className="flex">
@@ -26,7 +32,7 @@ export function CartItemComponent({ cartItem, onUpdate }: Props) {
 					/>
 				</div>
 				<div className="block">
-					<button className='bg-tertiary transition-colors rounded cursor-pointer hover:bg-primary'>
+					<button onClick={hanldeClick} className='bg-tertiary transition-colors rounded cursor-pointer hover:bg-primary'>
 						<i className='fa fa-trash p-3 text-white text-opacity-80 transition-opacity hover:text-opacity-100'></i>
 					</button>
 				</div>
