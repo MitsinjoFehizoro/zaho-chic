@@ -1,11 +1,18 @@
-import { CartItem } from "./cart-item";
+import { Cart } from "../../types/Cart";
+import { CartItemComponent } from "./cart-item-component";
 
-export function CartCard() {
+type Props = {
+	cart: Cart
+}
+export function CartCard({ cart }: Props) {
 	return (
 		<div className="w-full flex flex-col">
 			<h1 className="text-white text-2xl pt-8 pb-6 mb-6 border-b border-white border-opacity-20">Shopping cart</h1>
-			<CartItem />
-			<CartItem />
+			{
+				cart.cartItems.map(cartItem => (
+					<CartItemComponent key={cartItem.id} cartItem={cartItem} />
+				))
+			}
 		</div>
 	)
 }

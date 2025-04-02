@@ -24,10 +24,10 @@ export function NavBar() {
 				</div>
 				{
 					isAuth ? (
-						<p onClick={logout} className="text-white flex items-center gap-2 transition hover:scale-95 hover:opacity-80 cursor-pointer">
+						<div onClick={logout} className="text-white flex items-center gap-2 transition hover:scale-95 hover:opacity-80 cursor-pointer">
 							<i className="fa-regular fa-circle-user text-lg"></i>
 							<p className="capitalize">{userAuth?.username}</p>
-						</p>
+						</div>
 					) : (
 						<NavLink to='/login' className={`${NAV_BAR_LINK} block`}>Sign in</NavLink>
 					)

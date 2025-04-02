@@ -1,23 +1,27 @@
-import tee from '../../assets/images/teeshirt.png';
 import { UpdateSize } from './update-size';
 import { ButtonDelete } from './button-delete';
 import { UpdateQuantity } from './update-quantity';
 import { Price } from '../global/price';
-export function CartItem() {
+import { CartItem } from '../../types/CartItem';
+
+type Props = {
+	cartItem: CartItem
+}
+export function CartItemComponent({ cartItem }: Props) {
 
 	return (
 		<div className='mb-12'>
 			<div className="flex">
 				<div className="min-w-36 h-36 bg-tertiary rounded-xl flex items-center justify-center">
-					<img src={tee} className="max-h-32 max-w-32" />
+					<img src={cartItem.product.images[0].path} className="max-h-32 max-w-32" />
 				</div>
 				<div className="py-2 px-6">
-					<h3 className="text-primary text-lg font-black capitalize truncate">Basic Tee Shirt</h3>
+					<h3 className="text-primary text-lg font-black capitalize truncate">{cartItem.product.title}</h3>
 					<p className=" text-white text-opacity-80 text-sm line-clamp-2 trancuate my-2">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis corporis quibusdam consequatur ratione voluptas at nemo exercitationem deleniti numquam voluptate iure autem, temporibus impedit laborum aut omnis corrupti asperiores qui.
+						{cartItem.product.description}
 					</p>
 					<Price
-						value={34}
+						value={cartItem.product.price}
 						isPerPiece={true}
 					/>
 				</div>

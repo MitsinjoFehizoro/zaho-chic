@@ -6,6 +6,8 @@ import { ShopPage } from "./pages/shop-page"
 import { CartPage } from "./pages/cart-page"
 import { RegisterPage } from "./pages/register-page"
 import { LoginPage } from "./pages/login-page"
+import { PrivateRoute } from "./pages/private-route"
+import { path } from "framer-motion/client"
 
 const route = createBrowserRouter([
 	{
@@ -22,17 +24,23 @@ const route = createBrowserRouter([
 				element: <ShopPage />
 			},
 			{
-				path: 'cart',
-				element: <CartPage />
-			},
-			{
 				path: 'register',
 				element: <RegisterPage />
 			},
 			{
 				path: 'login',
 				element: <LoginPage />
-			}
+			},
+			{
+				path: 'cart',
+				element: <PrivateRoute />,
+				children: [
+					{
+						path: "",
+						element: <CartPage />
+					}
+				]
+			},
 		]
 	}
 ])
