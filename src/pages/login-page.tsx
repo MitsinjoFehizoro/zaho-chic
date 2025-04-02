@@ -20,7 +20,7 @@ export function LoginPage() {
 		e.preventDefault()
 		fetchData()
 	}
-	
+
 	useEffect(() => {
 		if (stateFetch.data) {
 			login(stateFetch.data.data.token)
@@ -50,7 +50,7 @@ export function LoginPage() {
 				/>
 				<div />
 				<CustomRoundButton
-					title="Register"
+					title="Login"
 					disable={!usernameField.isValid || !passwordField.isValid}
 					isLoading={stateFetch.loading}
 					className="bg-primary w-full rounded-lg"
