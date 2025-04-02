@@ -4,6 +4,8 @@ import PageNotFound from "./pages/page-not-found"
 import { HomePage } from "./pages/home-page"
 import { ShopPage } from "./pages/shop-page"
 import { CartPage } from "./pages/cart-page"
+import { RegisterPage } from "./pages/register-page"
+import { LoginPage } from "./pages/login-page"
 
 const route = createBrowserRouter([
 	{
@@ -22,8 +24,15 @@ const route = createBrowserRouter([
 			{
 				path: 'cart',
 				element: <CartPage />
+			},
+			{
+				path: 'register',
+				element: <RegisterPage />
+			},
+			{
+				path: 'login',
+				element: <LoginPage />
 			}
-
 		]
 	}
 ])

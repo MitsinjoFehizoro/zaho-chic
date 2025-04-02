@@ -8,7 +8,7 @@ export function Contact() {
 	return (
 		<section className="flex flex-col items-center gap-y-12 pb-24">
 			<h1 className={`${TITLE}`}>Do you have a message for us ?</h1>
-			<form className="w-2/5 flex flex-col gap-y-6" action="">
+			{/* <form className="w-2/5 flex flex-col gap-y-6" action="">
 				<CustomInput
 					placeholder="Your name"
 					className="rounded-full"
@@ -26,7 +26,7 @@ export function Contact() {
 					isWithIcon={true}
 					className="bg-primary place-self-end"
 				/>
-			</form>
+			</form> */}
 		</section>
 	)
 }

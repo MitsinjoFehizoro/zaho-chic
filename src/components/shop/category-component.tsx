@@ -22,8 +22,8 @@ export function CategoryComponent({ category }: Props) {
 			</div>
 			<div className="flex flex-wrap justify-between gap-y-8 py-12">
 				{
-					category.products.map(product=>(
-						<ProductItem product={product}/>
+					category.products.map(product => (
+						<ProductItem key={product.id} product={product} />
 					))
 				}
 			</div>
