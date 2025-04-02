@@ -13,6 +13,10 @@ export function CartPage() {
 		fetchData()
 	}, [])
 
+	const handleUpdate = () => {
+		fetchData()
+	}
+
 	return (
 		<section className="min-h-[100vh] gap-8 px-24 flex justify-between">
 			<BlurStyle />
@@ -24,8 +28,8 @@ export function CartPage() {
 			{
 				stateFetch.data && (
 					<>
-						<CartCard cart={stateFetch.data.data} />
-						<OrderSummary cart={stateFetch.data.data}  />
+						<CartCard cart={stateFetch.data.data} onUpdate={handleUpdate} />
+						<OrderSummary cart={stateFetch.data.data} />
 					</>
 				)
 			}

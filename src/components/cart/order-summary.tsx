@@ -16,7 +16,7 @@ export function OrderSummary({cart} : Props) {
 					link=""
 					title="Validate"
 					isWithIcon={true}
-					className="bg-primary text-base"
+					className="bg-primary text-base cursor-not-allowed hover:scale-100"
 				/>
 			</div>
 

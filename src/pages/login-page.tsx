@@ -13,13 +13,17 @@ import { useAuthContext } from "../hooks/useAuthContext";
 export function LoginPage() {
 	const { usernameField, handleUsernameField } = useUsernameValidation()
 	const { passwordField, handlePasswordField } = usePasswordValidation()
-	const { login } = useAuthContext()
+	const { login, logout } = useAuthContext()
+
 	const { stateFetch, fetchData } = useFetch<User>(() => loginUserService({ username: usernameField.value, password: passwordField.value }))
 	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		fetchData()
 	}
-	
+
+	useEffect(() => {
+		// logout()
+	}, [])
 	useEffect(() => {
 		if (stateFetch.data) {
 			login(stateFetch.data.data.token)

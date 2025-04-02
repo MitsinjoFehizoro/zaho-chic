@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate, NavLink, Outlet } from "react-router-dom"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 export function PrivateRoute() {

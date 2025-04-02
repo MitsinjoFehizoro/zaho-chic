@@ -42,7 +42,6 @@ export function useAuthContext() {
 		setUserAuth({ username: decoded.sub! })
 		setIsAuth(true)
 		navigate("/")
-
 	}
 
 	const logout = () => {
