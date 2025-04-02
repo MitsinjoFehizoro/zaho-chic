@@ -17,7 +17,7 @@ export function CartCard({ cart, onUpdate }: Props) {
 				) : (
 					<p className="text-white text-center text-opacity-80">Your cart is still empty.</p>
 				)
-			}
+			}	
 		</div>
 	)
 }

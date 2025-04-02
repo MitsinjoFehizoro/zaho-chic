@@ -8,14 +8,16 @@ export function Contact() {
 	return (
 		<section className="flex flex-col items-center gap-y-12 pb-24">
 			<h1 className={`${TITLE}`}>Do you have a message for us ?</h1>
-			{/* <form className="w-2/5 flex flex-col gap-y-6" action="">
-				<CustomInput
+			<form className="w-2/5 flex flex-col gap-y-6" action="">
+				<input
+					type="text"
 					placeholder="Your name"
-					className="rounded-full"
+					className="rounded-full py-2.5 px-6 w-full text-white text-opacity-80 bg-secondary border border-white border-opacity-20 outline-none"
 				/>
-				<CustomInput
-					placeholder="Example@gmail.com"
-					className="rounded-full"
+				<input
+					type="text"
+					placeholder="Your email"
+					className="rounded-full py-2.5 px-6 w-full text-white text-opacity-80 bg-secondary border border-white border-opacity-20 outline-none"
 				/>
 				<CustomTextarea
 					placeholder="Your message ..."
@@ -24,9 +26,11 @@ export function Contact() {
 				<CustomRoundButton
 					title="Submit"
 					isWithIcon={true}
-					className="bg-primary place-self-end"
+					isLoading={false}
+					disable={true}
+					className="bg-primary place-self-end hover:scale-100 cursor-not-allowed"
 				/>
-			</form> */}
+			</form>
 		</section>
 	)
 }

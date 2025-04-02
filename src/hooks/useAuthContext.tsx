@@ -22,7 +22,7 @@ export function useAuthContext() {
 	const { isAuth, setIsAuth, userAuth, setUserAuth } = useContext(AuthContext)
 	const navigate = useNavigate()
 
-	useEffect(() => {
+	const authenticate = () => {
 		const token = localStorage.getItem('token')
 		if (token) {
 			try {
@@ -33,7 +33,7 @@ export function useAuthContext() {
 				logout()
 			}
 		}
-	}, [])
+	}
 
 	const login = (token: string) => {
 		console.log("token", token)
@@ -54,6 +54,7 @@ export function useAuthContext() {
 	return {
 		isAuth,
 		userAuth,
+		authenticate,
 		login,
 		logout
 	}

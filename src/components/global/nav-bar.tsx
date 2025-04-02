@@ -15,16 +15,14 @@ export function NavBar() {
 					<div className="gap-6 flex items-center">
 						<NavLink to='/' className={NAV_BAR_LINK}>Home</NavLink>
 						<NavLink to='/shop' className={NAV_BAR_LINK}>Shop</NavLink>
-						<NavLink to='/' className={NAV_BAR_LINK}>Why us</NavLink>
-						<NavLink to='/' className={NAV_BAR_LINK}>Contact</NavLink>
-						<div className="ml-10">
-							<RoundNavLink link="/cart" title="Go to cart" />
-						</div>
+						<NavLink to='' className={`${NAV_BAR_LINK} !cursor-not-allowed`}>Why us</NavLink>
+						<NavLink to='' className={`${NAV_BAR_LINK} !cursor-not-allowed`}>Contact</NavLink>
+						<RoundNavLink link="/cart" title="Go to cart" className="ml-10" />
 					</div>
 				</div>
 				{
 					isAuth ? (
-						<div onClick={logout} className="text-white flex items-center gap-2 transition hover:scale-95 hover:opacity-80 cursor-pointer">
+						<div title="Logout" onClick={logout} className="text-white flex items-center gap-2 transition hover:scale-95 hover:opacity-80 cursor-pointer">
 							<i className="fa-regular fa-circle-user text-lg"></i>
 							<p className="capitalize">{userAuth?.username}</p>
 						</div>

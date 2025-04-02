@@ -5,7 +5,13 @@ export const updateCartItemApi = async (quantity: number, cartItemId: string) =>
 	return response.data
 }
 
-export const deleteCartItemApi = async (cartItemId : string )=>{
+export const deleteCartItemApi = async (cartItemId: string) => {
 	const response = await axiosInstance.delete(`/cart-items/remove?cartItemId=${cartItemId}`)
 	return response.data
 }
+
+export const addCartItemApi = async (quantity: string, productId: string) => {
+	const response = await axiosInstance.post(`/cart-items/add?quantity=${quantity}&productId=${productId}`)
+	return response.data
+}
+

@@ -1,8 +1,10 @@
 import image from "../../assets/images/background.webp";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { TITLE } from "../../scss/base/tailwind";
 import { BigRoundNavLink } from "../global/big-round-nav-link";
 
 export function Welcome() {
+	const { isAuth } = useAuthContext()
 	return (
 		<section className="relative h-[80vh] overflow-hidden">
 			<div className="w-full h-[80vh] absolute bg-secondary opacity-70" />
@@ -16,11 +18,17 @@ export function Welcome() {
 					eligendi facere modi cum debitis ratione natus ad!
 				</p>
 				<div className="flex gap-6">
-					<BigRoundNavLink link="/" title="Register" className="bg-tertiary" />
-					<BigRoundNavLink link="/" title="Buy now" className="bg-primary" isWithIcon={true} />
+					{
+						isAuth ? (
+							<BigRoundNavLink link="/cart" title="Go to cart" className="bg-tertiary" />
+						) : (
+							<BigRoundNavLink link="/register" title="Register" className="bg-tertiary" />
+						)
+					}
+					<BigRoundNavLink link="/shop" title="Buy now" className="bg-primary" isWithIcon={true} />
 				</div>
 			</div>
 			<img src={image} />
 		</section>
 	)
-}
+} 

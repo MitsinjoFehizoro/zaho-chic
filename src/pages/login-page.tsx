@@ -20,10 +20,7 @@ export function LoginPage() {
 		e.preventDefault()
 		fetchData()
 	}
-
-	useEffect(() => {
-		// logout()
-	}, [])
+	
 	useEffect(() => {
 		if (stateFetch.data) {
 			login(stateFetch.data.data.token)

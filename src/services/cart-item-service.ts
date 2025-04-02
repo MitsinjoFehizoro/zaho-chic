@@ -1,4 +1,4 @@
-import { deleteCartItemApi, updateCartItemApi } from './../api/cart-item-api';
+import { addCartItemApi, deleteCartItemApi, updateCartItemApi } from './../api/cart-item-api';
 export const updateCartItemService = async (quantity: number, cartItemId: string) => {
 	try {
 		const apiData = await updateCartItemApi(quantity, cartItemId)
@@ -18,3 +18,14 @@ export const deleteCartItemService = async (cartItemId: string) => {
 		throw new Error("Delete cartItem failed")
 	}
 }
+
+export const addCartItemService = async (quantity: string, productId: string) => {
+	try {
+		const apiData = await addCartItemApi(quantity, productId)
+		return apiData
+	} catch (e) {
+		console.log("Add cartItem failed")
+		throw new Error("Add cartItem failed")
+	}
+}
+

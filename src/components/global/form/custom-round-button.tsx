@@ -4,12 +4,13 @@ type Props = {
 	title: string,
 	isWithIcon?: boolean,
 	className?: string,
-	disable: boolean,
-	isLoading: boolean
+	disable?: boolean,
+	isLoading: boolean,
+	onClick?: () => void
 }
-export function CustomRoundButton({ title, isLoading, disable, className, isWithIcon = false }: Props) {
+export function CustomRoundButton({ title, isLoading, disable = false, className, isWithIcon = false, onClick }: Props) {
 	return (
-		<button disabled={disable} className={`${className} ${disable ? `opacity-50` : `opacity-100`} flex gap-2 items-center justify-center w-36 py-2 rounded-full text-white text-center text-lg font-bold border-none`}>
+		<button onClick={onClick} disabled={disable} className={`${className} ${disable ? `opacity-50` : `opacity-100`} flex gap-2 items-center justify-center w-36 py-2 rounded-full text-white text-center text-lg font-bold border-none transition hover:scale-105`}>
 			{
 				!isLoading ? (
 					<>
